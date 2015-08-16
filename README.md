@@ -1,6 +1,11 @@
 # RxViewObserver
 
 
+## Usage
+
+Please see sample project(rxviewobserver-sample/).
+
+
 ## License
 
 It's under the Apache License, Version 2.0.
