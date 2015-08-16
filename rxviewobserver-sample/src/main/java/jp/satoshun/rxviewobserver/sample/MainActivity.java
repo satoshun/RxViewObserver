@@ -162,6 +162,14 @@ public class MainActivity extends AppCompatActivity
                             Log.d(TAG, "detect global focus");
                         }
                     });
+
+            RxViewObserver.touchMode(binding.getRoot())
+                    .subscribe(new Action1<Boolean>() {
+                        @Override
+                        public void call(Boolean aBoolean) {
+                            Log.d(TAG, "detect touch mode");
+                        }
+                    });
         }
 
         @Override

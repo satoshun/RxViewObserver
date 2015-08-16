@@ -1,5 +1,7 @@
 # RxViewObserver
 
+binding APIs for ViewTreeObserver from Android platform.
+
 
 ## Usage
 
