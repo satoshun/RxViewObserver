@@ -11,4 +11,9 @@ public class RxViewObserver {
     public static Observable<View> scroll(final View view) {
         return Observable.create(new ScrollEventOnSubscribe(view));
     }
+
+    @CheckResult
+    public static Observable<View> globalFocus(final View view) {
+        return Observable.create(new GlobalFocusEventOnSubscribe(view));
+    }
 }

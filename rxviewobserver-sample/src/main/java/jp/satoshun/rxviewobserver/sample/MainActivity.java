@@ -154,6 +154,14 @@ public class MainActivity extends AppCompatActivity
                             Log.d(TAG, "detect scroll");
                         }
                     });
+
+            RxViewObserver.globalFocus(binding.getRoot())
+                    .subscribe(new Action1<View>() {
+                        @Override
+                        public void call(View view) {
+                            Log.d(TAG, "detect global focus");
+                        }
+                    });
         }
 
         @Override
