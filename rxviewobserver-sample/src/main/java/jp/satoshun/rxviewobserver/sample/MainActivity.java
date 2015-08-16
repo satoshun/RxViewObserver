@@ -170,6 +170,14 @@ public class MainActivity extends AppCompatActivity
                             Log.d(TAG, "detect touch mode");
                         }
                     });
+
+            RxViewObserver.preDrawn(binding.getRoot())
+                    .subscribe(new Action1<View>() {
+                        @Override
+                        public void call(View view) {
+                            Log.d(TAG, "detect pre drawn");
+                        }
+                    });
         }
 
         @Override
