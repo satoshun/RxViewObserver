@@ -1,16 +1,37 @@
 package jp.satoshun.rxviewobserver.sample;
 
-import android.support.v7.app.AppCompatActivity;
+import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import jp.satoshun.rxviewobserver.RxViewObserver;
+import jp.satoshun.rxviewobserver.sample.databinding.ActivityMainBinding;
+import rx.Subscription;
+import rx.functions.Action1;
 
 public class MainActivity extends AppCompatActivity {
+
+    private final static String TAG = "MainActivity";
+
+    private ActivityMainBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+
+        RxViewObserver.scroll(binding.scrollSample)
+                .take(10)
+                .subscribe(new Action1<View>() {
+                    @Override
+                    public void call(View o) {
+                        Log.d(TAG, "detect scroll");
+                    }
+                });
     }
 
     @Override

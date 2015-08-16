@@ -1,12 +1,14 @@
 package jp.satoshun.rxviewobserver;
 
+import android.support.annotation.CheckResult;
 import android.view.View;
 
-public class RxViewObserver {
-    public static RxViewObserver create(final View view) {
-        return new RxViewObserver(view);
-    }
+import rx.Observable;
 
-    private RxViewObserver(final View view) {
+public class RxViewObserver {
+
+    @CheckResult
+    public static Observable<View> scroll(final View view) {
+        return Observable.create(new ScrollEventOnSubscribe(view));
     }
 }
