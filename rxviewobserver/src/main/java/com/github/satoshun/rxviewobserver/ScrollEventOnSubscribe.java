@@ -1,4 +1,4 @@
-package jp.satoshun.rxviewobserver;
+package com.github.satoshun.rxviewobserver;
 
 import android.view.View;
 import android.view.ViewTreeObserver;

@@ -1,4 +1,4 @@
-package jp.satoshun.rxviewobserver.sample;
+package com.github.satoshun.rxviewobserver.sample;
 
 import android.app.Activity;
 import android.databinding.DataBindingUtil;
@@ -15,8 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-import jp.satoshun.rxviewobserver.RxViewObserver;
-import jp.satoshun.rxviewobserver.sample.databinding.FragmentMainBinding;
+import com.github.satoshun.rxviewobserver.sample.databinding.FragmentMainBinding;
+
 import rx.functions.Action1;
 
 public class MainActivity extends AppCompatActivity
@@ -146,7 +146,7 @@ public class MainActivity extends AppCompatActivity
         public void onViewCreated(View view, Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
 
-            RxViewObserver.scroll(binding.scrollSample)
+            com.github.satoshun.rxviewobserver.RxViewObserver.scroll(binding.scrollSample)
                     .take(10)
                     .subscribe(new Action1<View>() {
                         @Override
@@ -155,7 +155,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
 
-            RxViewObserver.globalFocus(binding.getRoot())
+            com.github.satoshun.rxviewobserver.RxViewObserver.globalFocus(binding.getRoot())
                     .subscribe(new Action1<View>() {
                         @Override
                         public void call(View view) {
@@ -163,7 +163,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
 
-            RxViewObserver.touchMode(binding.getRoot())
+            com.github.satoshun.rxviewobserver.RxViewObserver.touchMode(binding.getRoot())
                     .subscribe(new Action1<Boolean>() {
                         @Override
                         public void call(Boolean aBoolean) {
@@ -171,7 +171,7 @@ public class MainActivity extends AppCompatActivity
                         }
                     });
 
-            RxViewObserver.preDrawn(binding.getRoot())
+            com.github.satoshun.rxviewobserver.RxViewObserver.preDrawn(binding.getRoot())
                     .subscribe(new Action1<View>() {
                         @Override
                         public void call(View view) {
@@ -187,5 +187,4 @@ public class MainActivity extends AppCompatActivity
                     getArguments().getInt(ARG_SECTION_NUMBER));
         }
     }
-
 }

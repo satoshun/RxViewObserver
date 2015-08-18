@@ -1,4 +1,4 @@
-package jp.satoshun.rxviewobserver.sample;
+package com.github.satoshun.rxviewobserver.sample;
 
 import android.app.Activity;
 import android.content.SharedPreferences;

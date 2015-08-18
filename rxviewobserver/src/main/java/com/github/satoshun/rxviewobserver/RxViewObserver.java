@@ -1,4 +1,4 @@
-package jp.satoshun.rxviewobserver;
+package com.github.satoshun.rxviewobserver;
 
 import android.support.annotation.CheckResult;
 import android.view.View;
